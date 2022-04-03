@@ -30,6 +30,7 @@ class GetUserInfo:
         while(self.is_valid_time(leaveHome) == False):
             msg = "What time do you leave home on a typical "+ (self.day[day])+ "?: "
             leaveHome = input(msg)
+            #leaveHome = str(int(leaveHome)-20)
             if(leaveHome == ""):
                 self.notiTime[day].append(None)
             else:
@@ -43,6 +44,7 @@ class GetUserInfo:
         while(self.is_valid_time(nextDayWeather) == False or len(nextDayWeather) == 0):
             msg = "What time do you want next day weather on "+ (self.day[day]) + "?: "
             nextDayWeather = input(msg)
+            #nextDayWeather = str(int(nextDayWeather)-20)
             if(nextDayWeather == ""):
                 self.notiTime[day].append(None)
             else:
@@ -75,14 +77,18 @@ class GetUserInfo:
             self.getNotiTime(self, i)
         while(self.phoneNum != "" or (self.phoneNum.isdigit() == True and len(self.phoneNum) != 10 )):
             self.phoneNum = input("\nProvide your phone number (10digit): ")
-        while(self.wantLeaveHomeMsges != True or self.wantLeaveHomeMsges != False):
+        while(self.wantLeaveHomeMsges == None):
             temp = input("Do you want reminders on weather preperation before you leave home? [y/n]: ")
             if(temp == "y"):
                 self.wantLeaveHomeMsges = True
-        while(self.wantNextDayWeatherMsges != True or self.wantNextDayWeatherMsges != False):
+            else:
+                self.wantLeaveHomeMsges = False
+        while(self.wantNextDayWeatherMsges == None):
             temp = input("Do you want to know the general weather for the next day the night before? [y/n]: ")
             if(temp == "y"):
                 self.wantNextDayWeatherMsges = True 
+            else:
+                self.wantNextDayWeatherMsges = False
         self.printSummary(self)
 
     #Get coordinates script to get latitude and longitude from a provided zip code. This is used in getting weather info API. 

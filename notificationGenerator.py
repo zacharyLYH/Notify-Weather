@@ -29,8 +29,9 @@ class GenerateNotification:
             temp.append("umbrella")
             temp.append("raincoat")
         elif(condition == "Snow" or condition == "Haze"):
-            temp.append("winterJacket")
-            temp.append("headWarmer")
+            temp.append("winter jacket")
+            temp.append("head warmer")
+            temp.append("snow boots")
         elif(condition == "Clear"):
             temp.append("hat")
             temp.append("sunglasses")

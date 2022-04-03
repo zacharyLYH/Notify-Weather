@@ -4,11 +4,13 @@ A desktop app that eliminates your need to check the weather ever again. We supp
 
 # 🍿 Features
 * Send system prompts notifying user about weather status
-* Ask for when the user 1. leaves the house and 2. expects to go to sleep
+* Ask for when the user 1. leaves the house and 2. expects to receive tomorrows weather forecast
 
-# 🌩 Weather API
+# 🌩 Weather API, Geographical API
 This app uses the one-call api to fetch weather information based on *location*, *time preferences*
 `https://openweathermap.org/api/one-call-api`
+It also uses the openweathermap.org/geo API to get latitude and longitude data from zip codes.
+`https://openweathermap.org/api/geocoding-api`
 
 # 💭 Notification Generator
 There are two type of notifications. One delivers **today's weather** and the other **tomorrow's weather**
